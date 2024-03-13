@@ -7,7 +7,7 @@ services:
     image: app
     working_dir: /app
     deploy:
-      replicas: 3  # Specify the number of replicas
+      replicas: 3
     volumes:
       - ./log/log:/app/log
 

@@ -1,3 +1,4 @@
+#!/bin/bash
 IP=$(hostname -I | awk '{print $1}')
 if [ -z "$IP" ]; then
   echo "Failed to get our IP address."

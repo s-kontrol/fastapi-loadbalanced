@@ -1,4 +1,5 @@
 #!/bin/bash
+
 ./clear_logs.sh
 echo "Shutting down containers..."
 docker-compose down -v
