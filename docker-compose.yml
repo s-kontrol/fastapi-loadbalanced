@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  app:
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    image: app
+    working_dir: /app
+    ports:
+      - "8000"
+    depends_on:
+      - proxy
+    deploy:
+      replicas: 3  # Specify the number of replicas
+
+  proxy:
+    build:
+      context: ./proxy
+      dockerfile: Dockerfile
+    image: proxy
+    ports:
+      - "8080:80"
