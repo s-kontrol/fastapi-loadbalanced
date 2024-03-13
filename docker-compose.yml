@@ -7,12 +7,10 @@ services:
       dockerfile: Dockerfile
     image: app
     working_dir: /app
-    ports:
-      - "8000"
-    depends_on:
-      - proxy
     deploy:
       replicas: 3  # Specify the number of replicas
+    volumes:
+      - ./log/log:/app/log
 
   proxy:
     build:
@@ -21,3 +19,5 @@ services:
     image: proxy
     ports:
       - "8080:80"
+    depends_on:
+      - app

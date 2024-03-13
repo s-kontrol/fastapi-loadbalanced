@@ -27,7 +27,7 @@ def read_root():
 @app.get("/counter")
 def read_root():
     content = interact_withfile('counter/counter')
-    log_request('test!')
+    log_request(f'content: {content}')
     return_dict = {
         'counter': content
     }
