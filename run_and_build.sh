@@ -1,3 +1,3 @@
 #!/bin/bash
-:> log/log
+./clear_logs.sh
 docker-compose up -d --build --remove-orphans
